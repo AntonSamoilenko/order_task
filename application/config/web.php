@@ -46,7 +46,12 @@ $config = [
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
-            'rules' => [],
+            'rules' => [
+                'orders/export_csv' => 'orders/order/export-csv', // Правило для exportCsv
+                'orders/<status:\w+>' => 'orders/order/index',
+                'orders/' => 'orders/order/index',
+                'orders' => 'orders/order/index',
+            ],
         ],
     ],
     'modules' => [
